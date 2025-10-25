@@ -34,3 +34,5 @@ gradle -v
 chmod +x porject-setup.sh 
 
 echo "[INFO] Setup completed successfully."
+
+return 0
