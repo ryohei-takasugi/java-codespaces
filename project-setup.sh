@@ -6,6 +6,10 @@ groupId="${1:?Usage: $0 <groupId> <artifactId>}"
 artifactId="${2:?Usage: $0 <groupId> <artifactId>}"
 
 echo "[INFO] Initializing Gradle project..."
+if [ -e "$artifactId" ]; then
+    echo "[ERROR] Target '$artifactId' already exists. Aborting to avoid overwrite."
+    exit 1
+fi
 mkdir -p -- "$artifactId"
 cd -- "$artifactId"
 

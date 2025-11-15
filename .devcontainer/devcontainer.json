@@ -3,16 +3,16 @@
   "image": "mcr.microsoft.com/devcontainers/java:1-21-bookworm",
   "containerEnv": {
     "GRADLE_VERSION": "8.10.2",
-    "GRADLE_HOME": "/opt/gradle/gradle-${containerEnv:GRADLE_VERSION}",
+    "GRADLE_HOME": "/opt/gradle/gradle-8.10.2",
     "JAVA_HOME": "/usr/lib/jvm/msopenjdk-current"
   },
   "remoteEnv": {
     "GRADLE_VERSION": "8.10.2",
-    "GRADLE_HOME": "/opt/gradle/gradle-${containerEnv:GRADLE_VERSION}",
+    "GRADLE_HOME": "/opt/gradle/gradle-8.10.2",
     "JAVA_HOME": "/usr/lib/jvm/msopenjdk-current",
     "PATH": "${containerEnv:PATH}:${containerEnv:GRADLE_HOME}/bin:${containerEnv:JAVA_HOME}/bin"
   },
-  "postCreateCommand": "chmod +x .devcontainer/devcontainer-setup.sh && .devcontainer/devcontainer-setup.sh",
+  "postCreateCommand": "chmod +x .devcontainer/devcontainer-setup.sh && ./.devcontainer/devcontainer-setup.sh",
   "customizations": {
     "vscode": {
       "settings": {
@@ -29,7 +29,7 @@
           "GRADLE_VERSION": "8.10.2",
           "GRADLE_HOME": "/opt/gradle/gradle-8.10.2",
           "JAVA_HOME": "/usr/lib/jvm/msopenjdk-current",
-          "PATH": "/opt/gradle/gradle-8.10.2/bin:/usr/lib/jvm/msopenjdk-current/bin:${containerEnv:PATH}"
+          "PATH": "${containerEnv:PATH}:${containerEnv:GRADLE_HOME}/bin:${containerEnv:JAVA_HOME}/bin"
         }
       },
       "extensions": [
