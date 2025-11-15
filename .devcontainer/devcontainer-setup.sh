@@ -30,7 +30,15 @@ echo "JAVA_HOME is set to ${JAVA_HOME}"
 java -version 
 gradle -v 
 
-# 3. porject-setup のパーミッション設定 
-chmod +x porject-setup.sh 
+# 3. project-setup のパーミッション設定 
+chmod +x project-setup.sh 
+
+# 4. システム全体で恒久的に JAVA_HOME を設定 (すべてのシェルで有効にする)
+sudo tee /etc/profile.d/00-set-java-home.sh > /dev/null <<'EOF'
+export JAVA_HOME=/usr/lib/jvm/msopenjdk-current
+export PATH=${JAVA_HOME}/bin:${PATH}
+EOF
+sudo chmod 644 /etc/profile.d/00-set-java-home.sh
+echo "/etc/profile.d/00-set-java-home.sh created"
 
 echo "[INFO] Setup completed successfully."
