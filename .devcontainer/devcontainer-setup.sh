@@ -42,3 +42,5 @@ sudo chmod 644 /etc/profile.d/00-set-java-home.sh
 echo "/etc/profile.d/00-set-java-home.sh created"
 
 echo "[INFO] Setup completed successfully."
+
+return 0
