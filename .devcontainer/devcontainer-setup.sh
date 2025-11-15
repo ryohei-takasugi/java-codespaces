@@ -7,7 +7,7 @@ export GRADLE_VERSION=8.10.2
 
 # 1. 必要なツールをインストール 
 sudo apt-get update -y 
-sudo apt-get install -y --no-install-recommends curl unzip ca-certificates
+sudo apt-get install -y --no-install-recommends curl unzip ca-certificates git git-secrets
 
 # 2. Gradleのインストール
 export GRADLE_HOME=/opt/gradle/gradle-${GRADLE_VERSION} 
